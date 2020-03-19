@@ -1,0 +1,277 @@
+@import '_setting';
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select:focus,
+textarea {
+  font-size: 16px;
+}
+
+input {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+  -webkit-appearance: none;
+  &::placeholder {
+    opacity: .5;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+button {
+  border: none;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.item-error-tip {
+  color: #ed4014;
+  display: block;
+  font-size: 13px;
+}
+
+.item-success-tip {
+  color: #a5dc86;
+  display: block;
+  font-size: 13px;
+}
+
+.hide_li {
+  display:none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.form-input {
+  display: block;
+  margin: 0 0 15px;
+  &__title {
+    display: inline-block;
+    margin: 0 0 10px;
+    font-size: 13px;
+    color: $p-black;
+  }
+  .required:after {
+    content: '*';
+    color: $text-red;
+  }
+  &__frontText {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    display: block;
+    font-size: 13px;
+    color: $dark-gray;
+    line-height: 41px;
+  }
+  label {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 43px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: solid 1px $dark-gray;
+    line-height: 43px;
+    font-size: 13px;
+    background-color: $white;
+    input {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 13px;
+      outline: none;
+      color: $black;
+    }
+  }
+  .input-right {
+    input {
+      text-align: right;
+    }
+  }
+  &__caution {
+    display: block;
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: $p-black;
+  }
+}
+
+.input-radio {
+  display: none;
+}
+
+.label-radio {
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 23px;
+  font-size: 13px;
+  color: $p-black;
+  .radio-check_span {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: solid 1px $radio-border;
+    background-color: $white;
+    &::before {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $white;
+    }
+  }
+  .input-radio:checked ~ .radio-check_span {
+    border-color: $dark-gray;
+    background-color: $dark-gray;
+  }
+}
+
+.form-select {
+  margin: 0 0 13px;
+  .select-text {
+    display: block;
+    margin: 0 0 4px;
+    font-size: 13px;
+    color: $dark-gray;
+  }
+  label {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 43px;
+    box-sizing: border-box;
+    border: solid 1px $dark-gray;
+    background-color: $white;
+    border-radius: 5px;
+    &:after {
+      position: absolute;
+      top: 18px;
+      right: 10px;
+      content: '';
+      display: block;
+      width: 12px;
+      height: 7px;
+      background: url('~@/assets/img/common/arrow-down_gray.svg') no-repeat center center;
+      background-size: 12px 7px;
+    }
+    select {
+      display: block;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      padding: 0 6px;
+      font-size: 13px;
+      color: $black;
+    }
+  }
+}
+
+.btn-gray {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background-color: $dark-gray;
+  font-size: 14px;
+  font-weight: bold;
+  color: $white;
+  text-align: center;
+  box-shadow: 0 4px 8px $btn-shadow;
+  line-height: 50px;
+}
+
+.btn-white {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background-color: $white;
+  font-size: 14px;
+  font-weight: bold;
+  color: $black;
+  text-align: center;
+  box-shadow: 0 4px 8px $btn-shadow;
+  line-height: 50px;
+}
+
+.search-input {
+  position: relative;
+  display: block;
+  height: 43px;
+  margin: 0 0 20px;
+  background-color: $white;
+  border: solid 1px $dark-gray;
+  border-radius: 5px;
+  input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 13px;
+    color: $p-black;
+    line-height: 41px;
+    box-sizing: border-box;
+  }
+  button {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url('~@/assets/img/common/icon-search.svg') no-repeat $white;
+    background-size: contain;
+    outline: none;
+    border: none;
+  }
+}

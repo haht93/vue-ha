@@ -1,0 +1,356 @@
+// compileExpanded: ../../css/session/$1.css
+
+@import '../_setting';
+
+.session-slick {
+  width: 100vw;
+  margin-left: -10px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &__item {
+    display: inline-block;
+    width: calc(100vw - 20px);
+    margin: 0 10px;
+    .session-ticket {
+      border: solid 2px $blue;
+    }
+  }
+}
+
+.session-ticket {
+  position: relative;
+  display: block;
+  padding: 10px 33px 10px 10px;
+  margin: 0 0 10px;
+  background-color: $white;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.13);
+  overflow: hidden;
+  box-sizing: border-box;
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    display: block;
+    width: 23px;
+    height: 100%;
+    background: url('~@/assets/img/common/arrow-right.svg') no-repeat center center $blue;
+    background-size: 8px 15px;
+  }
+  &__title {
+    margin: 0 0 2px;
+    font-size: 14px;
+    font-weight: bold;
+    color: $black;
+    @include three-dots;
+  }
+  &__member {
+    display: block;
+    font-size: 12px;
+    color: $black;
+    @include three-dots;
+  }
+  &__name {
+    display: block;
+    margin: 0 0 2px;
+    font-size: 12px;
+    color: $black;
+    @include three-dots;
+  }
+  &__date {
+    display: block;
+    font-size: 12px;
+    color: $blue;
+    @include three-dots;
+  }
+}
+
+.session-list {
+  &__item {
+    margin: 0 0 7px;
+  }
+}
+
+.btn-session__wrapper {
+  text-align: center;
+  .btn-session {
+    display: inline-block;
+    height: 38px;
+    padding: 0 60px;
+    box-sizing: border-box;
+    border: solid 2px $dark-gray;
+    border-radius: 25px;
+    background-color: $white;
+    box-shadow: 0 2px 4px $btn-shadow;
+    font-size: 12px;
+    font-weight: bold;
+    color: $black;
+    line-height: 34px;
+  }
+  .text-gray {
+    color: $dark-gray;
+  }
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+#session-reservation,
+#session-entry {
+  display: none;
+}
+
+.session-label {
+  display: flex;
+  justify-content: center;
+  background-color: $white;
+  label {
+    display: block;
+    width: 130px;
+    height: 40px;
+    margin: 0 25px;
+    font-size: 13px;
+    color: rgba(90,127,145,.76);
+    text-align: center;
+    line-height: 40px;
+  }
+}
+
+.reservation-list,
+.entry-list {
+  display: none;
+}
+
+#session-reservation:checked ~ .session-label .session-reservation__label,
+#session-entry:checked ~ .session-label .session-entry__label {
+  border-bottom: solid 3px $dark-gray;
+  color: $dark-gray;
+  font-weight: bold;
+}
+
+#session-reservation:checked ~ .main-contents .reservation-list,
+#session-entry:checked ~ .main-contents .entry-list {
+  display: block;
+}
+
+.session-detail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px 80px;
+  background-color: $white;
+  box-sizing: border-box;
+  overflow: hidden;
+  &__info {
+    height: 180px;
+    margin-bottom: 10px;
+  }
+  &__header {
+    padding: 10px 0 0;
+    position: relative;
+    &-date {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: bold;
+      color: $black;
+    }
+    &-time {
+      display: inline-block;
+      margin: 0 0 0 10px;
+      font-size: 13px;
+      font-weight: bold;
+      color: $black;
+    }
+    &-place {
+      display: block;
+      font-size: 13px;
+    }
+    &-title {
+      padding: 0 17px 0 6px;
+      font-size: 15px;
+      font-weight: bold;
+      color: $black;
+      border-left: solid 5px $blue;
+      .name {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+    &-type {
+      position: absolute;
+      top: 11px;
+      right: 0;
+      span {
+        border-radius: 3px;
+        opacity: 1;
+        color: #fff;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 1px 5px;
+        min-width: 70px;
+        text-align: center;
+        display: block;
+        &.no-limit {
+          background-color: #479ACB;
+        }
+        &.limit {
+          background-color: #F87061;
+        }
+        &.seat-available {
+          span {
+            color: #F87061;
+            background-color: #fff;
+            text-align: right;
+            &:first-child {
+              border: 1px solid #F86F60;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__charge {
+    height: 44px;
+    background: $light-gray;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $black;
+    padding: 0 10px;
+    margin: 10px 0 14px;
+    &-title {
+    letter-spacing: 1.2px;
+  }
+    &-money {
+      font-size: 15px;
+    font-weight: bold;
+      span {
+        font-size: 21px;
+      }
+    }
+    &-free {
+      font-size: 17px;
+      font-weight: bold;
+      color: $blue-cerulean;
+    }
+  }
+  &__body {
+    height: calc(100% - 180px);
+    &-title {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 400;
+      color: $blue;
+    }
+    .detail-list {
+      height: calc(100% - 20px);
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 0.5em;
+        height: 0.5em;
+      }
+      &::-webkit-scrollbar-thumb {
+        opacity: 0.18;
+        background-color: rgba($black, .18);
+        border-radius: 6px;
+      }
+      &__item {
+        margin: 0 0 10px;
+        border-bottom: solid 1px $blue;
+        &:first-child {
+          padding: 10px 0 0;
+          border-top: solid 1px $blue;
+        }
+        &-title {
+          margin: 0;
+          font-size: 12px;
+          font-weight: bold;
+          color: $black;
+        }
+        &-menber, &-content {
+          margin: 0 0 10px;
+          font-size: 12px;
+          color: $black;
+          letter-spacing: 1px;
+        }
+
+      }
+    }
+  }
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    padding: 22px 0 0;
+    width: calc(100% - 20px);
+    height: 80px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: $white;
+    .btn-white {
+      width: 113px;
+      margin: 0 12px 0 0;
+      border: solid 2px $dark-gray;
+      box-sizing: border-box;
+      line-height: 46px;
+    }
+    .btn-gray {
+      width: calc(100% - 125px);
+    }
+    .active {
+      background-color: #E0E7EB;
+      border: none;
+    }
+  }
+}
+
+.session-qrcode {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 100px);
+  padding: 0 13px 95px;
+  border-radius: 5px;
+  background-color: $white;
+  box-shadow: 1px 2px 5px rgba(0,0,0,.45);
+  box-sizing: border-box;
+  &__img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 168px;
+      height: 168px;
+    }
+  }
+  &__bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 26px);
+    height: 95px;
+    margin: 0 auto;
+    border-top: solid 1px $blue;
+    text-align: center;
+    .text {
+      margin: 20px 0 0;
+      font-size: 12px;
+    }
+    .number {
+      font-size: 17px;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,403 @@
+// compileExpanded: ../../css/mypage/$1.css
+
+@import '../_setting';
+
+.mypage-ticket {
+  padding: 0 0 0 77px;
+  font-size: 17px;
+  font-weight: bold;
+  color: $black;
+  line-height: 85px;
+  &__icon {
+    position: absolute;
+    top: 20px;
+    left: 17px;
+    display: block;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+  }
+}
+
+.ticket-gray {
+  .mypage-ticket__icon {
+    background: url('~@/assets/img/common/icon-ticket.svg') no-repeat center center rgba(90,127,145, .08);
+    background-size: 22px 22px;
+  }
+}
+
+.ticket-blue  {
+  .mypage-ticket__icon {
+    background: url('~@/assets/img/common/icon-lists.svg') no-repeat center center rgba(71,154,203, .08);
+    background-size: 24px 24px;
+  }
+}
+
+.ticket-slick {
+  width: 100vw;
+  margin-left: -10px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &_item {
+    display: inline-block;
+    width: calc(100vw - 20px);
+    margin: 0 10px;
+  }
+}
+
+.manage-ticket {
+  height: 94px;
+  padding: 10px;
+  &__title {
+    margin: 0 0 5px;
+    font-size: 17px;
+    font-weight: bold;
+    color: $black;
+    line-height: 23px;
+    i {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      vertical-align: -5px;
+      &:not(:last-child) {
+        margin: 0 3px 0;
+      }
+    }
+  }
+  &__term {
+    margin: 0 0 4px;
+    font-size: 14px;
+    color: $black;
+  }
+  &__issue {
+    font-size: 12px;
+    color: rgba(102, 136, 153, .92);
+  }
+  &__price {
+    position: absolute;
+    right: 35px;
+    bottom: 10px;
+    font-size: 18px;
+    color: $black;
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+.ticket-manage__select {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .form-select {
+    width: calc(50% - 5px);
+  }
+}
+
+.ticket-manage__price {
+  display: flex;
+  padding: 0 5px;
+  margin: 0 0 30px;
+  justify-content: space-between;
+  border-bottom: solid 2px $dark-gray;
+  &-title {
+    font-size: 13px;
+    color: $black;
+    line-height: 37px;
+  }
+  &-price {
+    font-size: 25px;
+    font-weight: bold;
+    color: $black;
+    span {
+      font-size: 13px;
+    }
+  }
+}
+
+.payment-form {
+  .form-input:not(:last-child) {
+    margin: 0 0 10px;
+  }
+  .card-code {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    display: block;
+    width: 35px;
+  }
+}
+
+.ticket-list {
+  li {
+
+  }
+  &__item {
+    position: relative;
+    height: 80px;
+    padding: 10px;
+  }
+  &__title {
+    margin: 0 0 2px;
+    font-size: 17px;
+    font-weight: bold;
+    color: $black;
+  }
+  &__icon {
+    display: flex;
+    width: calc(100% - 20px);
+    flex-wrap: wrap;
+    li {
+      margin: 0 10px 1px 0;
+      font-size: 12px;
+      color: $dark-gray;
+      i {
+        display: inline-block;
+        margin-right: 3px;
+        width: 15px;
+        height: 15px;
+        vertical-align: -3px;
+      }
+    }
+  }
+  &__term {
+    font-size: 14px;
+    color: $black;
+    position: absolute;
+    left: 10px;
+    bottom: 8px;
+  }
+  &__price {
+    position: absolute;
+    right: 35px;
+    bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: $black;
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+.ticket-details {
+  position: relative;
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,.45);
+  &__optionDate {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    font-size: 13px;
+    color: $white;
+    text-align: right;
+  }
+  .ticket-tagList {
+    display: inline-flex;
+    padding: 0 0 0 13px;
+    margin: 0 0 27px;
+    &__item {
+      display: inline-flex;
+      height: 34px;
+      padding: 0 7px;
+      margin: 0 5px 0 0;
+      background-color: $white;
+      border-radius: 6px;
+      align-items: center;
+      i {
+        display: block;
+        margin-right: 4px;
+      }
+      span {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        color: $black;
+      }
+      .icon-adult {
+        width: 12px;
+        height: 23px;
+      }
+      .icon-child {
+        width: 13px;
+        height: 17px;
+      }
+      .icon-day1,
+      .icon-day2 {
+        width: 16px;
+        height: 17px;
+      }
+      .icon-all {
+        width: 15px;
+        height: 22px;
+        + span {
+          color: $text-red;
+        }
+      }
+    }
+  }
+  .qrcode-top_title {
+    display: none;
+  }
+  &__animation  {
+    width: 100%;
+    height: 54px;
+    &-item {
+      width: 100%;
+      height: 54px;
+      background: url('~@/assets/img/common/train.svg') no-repeat;
+      background-size: contain;
+      animation: trainmove 10s linear infinite;
+    	-webkit-animation: trainmove 10s linear infinite;
+    	-moz-animation: trainmove 10s linear infinite;
+    }
+  }
+  &__main {
+    padding: 19px 0;
+    margin: 0 0 15px;
+    background-color: $white;
+    &-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #363636;
+      text-align: center;
+    }
+    .qrcode-title {
+      margin: 0 0 21px;
+      font-size: 21px;
+    }
+    &-limit {
+      margin: 0 0 5px;
+      font-size: 18px;
+      color: #363636;
+      text-align: center;
+      font-weight: 600;
+      span {
+        font-size: 33px;
+        font-weight: bold;
+      }
+    }
+    &-time {
+      font-size: 19px;
+      font-weight: bold;
+      color: $text-red;
+      text-align: center;
+      span {
+        font-size: 26px;
+      }
+    }
+    &-qrcode {
+      margin: 10px 0 0;
+      text-align: center;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+  &__cityList {
+    min-height: 56px;
+    padding: 0 15px;
+    margin: 0 0 7px;
+    li {
+      display: block;
+      margin: 0 0 4px;
+      font-size: 12px;
+      font-weight: bold;
+      color: $white;
+      list-style-position: 15px;
+      i {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin: 0 5px 0 0;
+        background-color: $white;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+    }
+  }
+  &__links {
+    padding: 0 15px;
+    li {
+      &:not(:last-child) {
+        margin: 0 0 10px;
+      }
+      a {
+        height: 40px;
+        box-shadow: none;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+@keyframes trainmove {
+  0% {background-position: -224px 0;}
+  50% {background-position: 112px 0;}
+  100% {background-position: calc(100% + 224px) 0;}
+}
+
+@-webkit-keyframes trainmove {
+  0% {background-position: -224px 0;}
+  50% {background-position: 112px 0;}
+  100% {background-position: calc(100% + 224px) 0;}
+}
+
+@-moz-keyframes trainmove {
+  0% {background-position: -224px 0;}
+  50% {background-position: 112px 0;}
+  100% {background-position: calc(100% + 224px) 0;}
+}
+
+.details-green {
+  background-color: $dark-green;
+}
+
+.details-red {
+  background-color: $dark-red;
+}
+
+@media screen and (orientation: landscape) {
+  .main-contents__wrapper {
+    .main-contents {
+      padding: 10px 10px;
+    }
+  }
+
+  .ticket-details {
+    padding: 10px 0;
+    .qrcode-top_title {
+      display: inline-block;
+      margin: 0;
+      font-size: 22px;
+      font-weight: bold;
+      color: $white;
+      line-height: 34px;
+      vertical-align: top;
+    }
+    &__main {
+      padding: 10px;
+      &-qrcode {
+        margin: 0;
+      }
+    }
+    &__cityList {
+      display: none;
+    }
+    .qrcode-tagList {
+      margin: 0 0 7px;
+    }
+  }
+
+  .qrcode-title {
+    display: none;
+  }
+}

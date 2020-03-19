@@ -1,0 +1,311 @@
+// compileExpanded: ../../css/ticket/$1.css
+
+@import '../_setting';
+
+.ticket-optionList {
+  margin: 0 0 20px;
+  li {
+    display: block;
+    margin: 0 0 10px;
+    a {
+      position: relative;
+      display: block;
+      height: 45px;
+      padding: 0 10px;
+      background-color: $white;
+      border-radius: 3px;
+      box-sizing: border-box;
+      box-shadow: 0 1px 3px rgba(0,0,0,.13);
+      line-height: 45px;
+      font-size: 14px;
+      font-weight: bold;
+      color: $black;
+      &:after {
+        position: absolute;
+        top: 16px;
+        right: 8px;
+        content: '';
+        display: block;
+        width: 7px;
+        height: 12px;
+        background: url("~@/assets/img/common/arrow-right_gray.svg") no-repeat;
+        background-size: contain;
+      }
+      span {
+        display: inline-block;
+        margin: 0 0 0 15px;
+      }
+    }
+  }
+}
+
+.list-2column {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  li {
+    width: calc(50% - 2px);
+  }
+}
+
+.input-price {
+  display: block;
+  padding: 15px 10px;
+  background-color: $white;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0,0,0,.13);
+  font-size: 14px;
+  font-weight: bold;
+  color: $black;
+  &_text {
+    font-size: 13px;
+    color: $black;
+    font-weight: 400;
+  }
+  &_item {
+    position: relative;
+    border-bottom: solid 2px $dark-gray;
+    &-front {
+      position: absolute;
+      left: 0;
+      bottom: 13px;
+    }
+    label {
+      position: relative;
+      display: block;
+      width: 100%;
+      margin: 13px 0 0;
+      &:after {
+        position: absolute;
+        right: 8px;
+        bottom: 13px;
+        content: '円';
+        font-size: 13px;
+        font-weight: bold;
+      }
+      input {
+        display: block;
+        width: 100%;
+        padding: 0 22px 10px 0;
+        text-align: right;
+        box-sizing: border-box;
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.ticket-details {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding: 15px 0;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,.45);
+  box-sizing: border-box;
+  &__optionDate {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    font-size: 13px;
+    color: $white;
+    text-align: right;
+  }
+  .ticket-tagList {
+    display: inline-flex;
+    padding: 0 0 0 13px;
+    margin: 0 0 27px;
+    &__item {
+      display: inline-flex;
+      height: 34px;
+      padding: 0 7px;
+      margin: 0 5px 0 0;
+      background-color: $white;
+      border-radius: 6px;
+      align-items: center;
+      i {
+        display: block;
+        margin-right: 4px;
+      }
+      span {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        color: $black;
+      }
+      .icon-adult {
+        width: 12px;
+        height: 23px;
+      }
+      .icon-child {
+        width: 13px;
+        height: 17px;
+      }
+      .icon-day1,
+      .icon-day2 {
+        width: 16px;
+        height: 17px;
+      }
+      .icon-all {
+        width: 15px;
+        height: 22px;
+        + span {
+          color: $text-red;
+        }
+      }
+    }
+  }
+  .qrcode-top_title {
+    display: none;
+  }
+  &__animation  {
+    width: 100%;
+    height: 54px;
+    &-item {
+      width: 100%;
+      height: 54px;
+      background: url('~@/assets/img/common/train.svg') no-repeat;
+      background-size: contain;
+      animation: trainmove 10s linear infinite;
+    	-webkit-animation: trainmove 10s linear infinite;
+    	-moz-animation: trainmove 10s linear infinite;
+    }
+  }
+  &__main {
+    padding: 16px 0;
+    margin: 0 0 15px;
+    background-color: $white;
+    &-title {
+      margin: 0 0 7px;
+      font-size: 33px;
+      font-weight: bold;
+      color: #363636;
+      text-align: center;
+    }
+    &-type {
+      font-size: 15px;
+      color: #363636;
+      text-align: center;
+    }
+    &-price {
+      margin: 0 0 2px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #363636;
+      text-align: center;
+      line-height: 35px;
+      span {
+        font-size: 15px;
+      }
+    }
+    &-time {
+      font-size: 19px;
+      font-weight: bold;
+      color: $text-red;
+      text-align: center;
+      span {
+        font-size: 33px;
+      }
+    }
+    &-qrcode {
+      margin: 10px 0 0;
+      text-align: center;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+  &__cityList {
+    min-height: 56px;
+    padding: 0 15px;
+    margin: 0 0 7px;
+    li {
+      display: block;
+      margin: 0 0 4px;
+      font-size: 12px;
+      font-weight: bold;
+      color: $white;
+      list-style-position: 15px;
+      i {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin: 0 5px 0 0;
+        background-color: $white;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+    }
+  }
+  &__links {
+    bottom: 15px;
+    width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    box-sizing: border-box;
+    li {
+      &:not(:last-child) {
+        margin: 0 0 10px;
+      }
+      a {
+        height: 40px;
+        box-shadow: none;
+        line-height: 40px;
+      }
+      .btn-section {
+        display: inline-block;
+        height: 32px;
+        padding: 0 16px;
+        font-size: 13px;
+        font-weight: bold;
+        color: $black;
+        border-radius: 20px;
+        background-color: rgba(255,255,255,.7);
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+@keyframes trainmove {
+  0% {background-position: -224px 0;}
+  50% {background-position: 112px 0;}
+  100% {background-position: calc(100% + 224px) 0;}
+}
+
+@-webkit-keyframes trainmove {
+  0% {background-position: -224px 0;}
+  50% {background-position: 112px 0;}
+  100% {background-position: calc(100% + 224px) 0;}
+}
+
+@-moz-keyframes trainmove {
+  0% {background-position: -224px 0;}
+  50% {background-position: 112px 0;}
+  100% {background-position: calc(100% + 224px) 0;}
+}
+
+.details-green {
+  background-color: $dark-green;
+}
+
+.details-red {
+  background-color: $dark-red;
+}
+.ticket-links {
+  height: 80px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #323232;
+  line-height: 80px;
+  text-align: center;
+}
+
+.ticket-links:after {
+  width: 45px;
+  background: url("~@/assets/img/common/arrow-right_gray.svg") no-repeat center center;
+  background-size: 10px 17px;
+}

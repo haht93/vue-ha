@@ -1,0 +1,43 @@
+// compileExpanded: ../../css/register/$1.css
+
+@import '../_setting';
+
+.register-form {
+  &__choice {
+    display: flex;
+    margin: 0 0 25px;
+    justify-content: center;
+    .label-radio:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  .terms-checkbox {
+    text-align: center;
+    input {
+      display: none;
+    }
+    label {
+      display: inline-block;
+      width: 19px;
+      height: 19px;
+      margin: 0 2px 0 0;
+      border-radius: 3px;
+      box-sizing: border-box;
+      background: url('~@/assets/img/common/icon-checked.svg') no-repeat center center $white;
+      background-size: 9px 7px;
+      border: solid 1px $dark-gray;
+      vertical-align: middle;
+    }
+    input:checked + label {
+      background-color: $dark-gray;
+    }
+    a {
+      font-size: 13px;
+      color: $p-black;
+      line-height: 19px;
+    }
+  }
+  .register-btn {
+    margin: 25px 0 35px;
+  }
+}
